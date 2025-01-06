@@ -219,7 +219,6 @@ namespace EasyEasing
         #endregion
 
         #region Elastic
-
 		public static float EaseInElastic(float t, float total, float begin, float end, float a = 0f, float p = 0f)
 		{
 			if (t == 0f)
@@ -297,7 +296,6 @@ namespace EasyEasing
 			return a * Mathf.Pow(2f, -10f * t) * Mathf.Sin((t * total - s) * Mathf.PI * 2f / p) * 0.5f + (end - begin) +
 			       begin;
 		}
-
 		#endregion
     }
 }

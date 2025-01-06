@@ -116,9 +116,11 @@ namespace EasyEasing
                 float t = Mathf.Clamp01(elapsedTime / duration); // 0 から 1 に正規化
                 float easedT = UseEase.Ease(t, 1f, 0f, 1f, easingType); // イージング処理
 
-                // Z軸回りの回転にイージングを適用
-                float easedRotation = Mathf.LerpAngle(startRotation, endRotation, easedT);
-                target.rotation = Quaternion.Euler(0f, 0f, easedRotation);
+                // 回転にイージングを適用
+                float currentRotation = Mathf.Lerp(startRotation, endRotation, easedT);
+
+                // 回転を設定
+                target.rotation = Quaternion.Euler(0f, 0f, currentRotation);
 
                 await UniTask.Yield(); // 次のフレームを待機
             }

@@ -1,48 +1,110 @@
-namespace EasyEasing
+// 補間タイプを定義する列挙体
+
+public enum EasingType
 {
-    public enum EasingType
-    {
-        // 線形補間(Linear)
-        Linear,
-        // 2次補間(Quad)
-        EaseInQuad,
-        EaseOutQuad,
-        EaseInOutQuad,
-        // 3次補間(Cubic)
-        EaseInCubic,
-        EaseOutCubic,
-        EaseInOutCubic,
-        // 4次補間(Quart)
-        EaseInQuart,
-        EaseOutQuart,
-        EaseInOutQuart,
-        // 5次補間(Quint)
-        EaseInQuint,
-        EaseOutQuint,
-        EaseInOutQuint,
-        // 正弦波補間(Sine)
-        EaseInSine,
-        EaseOutSine,
-        EaseInOutSine,
-        // 指数補間(Expo)
-        EaseInExpo,
-        EaseOutExpo,
-        EaseInOutExpo,
-        // 円弧補間(Circ)
-        EaseInCirc,
-        EaseOutCirc,
-        EaseInOutCirc,
-        // バック補間
-        EaseInBack,
-        EaseOutBack,
-        EaseInOutBack,
-        // バウンス補間
-        EaseInBounce,
-        EaseOutBounce,
-        EaseInOutBounce,
-        // ばね
-        EaseInElastic,
-        EaseOutElastic,
-        EaseInOutElastic,
-    }
+    // ------------------------------
+    // 線形補間 (Linear)
+    // ------------------------------
+    // 一定速度で動くシンプルな補間
+    Linear,
+
+    // ------------------------------
+    // 2次補間 (Quad)
+    // ------------------------------
+    // 最初は遅く、最後は速く動く
+    EaseInQuad,
+    // 最初は速く、最後は遅く動く
+    EaseOutQuad,
+    // 最初と最後は遅く、途中は速く動く
+    EaseInOutQuad,
+
+    // ------------------------------
+    // 3次補間 (Cubic)
+    // ------------------------------
+    // 最初は遅く、途中で速く、最後はゆっくり動く
+    EaseInCubic,
+    // 最初は速く、途中で遅く、最後はゆっくり動く
+    EaseOutCubic,
+    // 最初と最後は遅く、途中は速く動く
+    EaseInOutCubic,
+
+    // ------------------------------
+    // 4次補間 (Quart)
+    // ------------------------------
+    // 最初は遅く、最後は速く動く（3次補間より強く加速）
+    EaseInQuart,
+    // 最初は速く、最後は遅く動く（3次補間より強く減速）
+    EaseOutQuart,
+    // 最初と最後は遅く、途中は速く動く（3次補間より強く加減速）
+    EaseInOutQuart,
+
+    // ------------------------------
+    // 5次補間 (Quint)
+    // ------------------------------
+    // 最初は遅く、最後は非常に速く動く
+    EaseInQuint,
+    // 最初は速く、最後は非常に遅く動く
+    EaseOutQuint,
+    // 最初と最後は遅く、途中は非常に速く動く
+    EaseInOutQuint,
+
+    // ------------------------------
+    // 正弦波補間 (Sine)
+    // ------------------------------
+    // 正弦波のような自然な動きで、最初と最後は遅く、途中は速く
+    EaseInSine,
+    // 最初は速く、最後は遅く動く
+    EaseOutSine,
+    // 最初と最後は遅く、途中は速く動く
+    EaseInOutSine,
+
+    // ------------------------------
+    // 指数補間 (Expo)
+    // ------------------------------
+    // 初めは遅く、途中で急激に加速する
+    EaseInExpo,
+    // 最初は速く、途中で急激に減速する
+    EaseOutExpo,
+    // 最初と最後は遅く、途中で急激に加減速する
+    EaseInOutExpo,
+
+    // ------------------------------
+    // 円弧補間 (Circ)
+    // ------------------------------
+    // 初めは遅く、途中で速く、最後は急に減速する
+    EaseInCirc,
+    // 最初は速く、途中で減速する
+    EaseOutCirc,
+    // 最初と最後は遅く、途中は速く動く
+    EaseInOutCirc,
+
+    // ------------------------------
+    // バック補間 (Back)
+    // ------------------------------
+    // 初めに少し戻るように動き、最後に加速する
+    EaseInBack,
+    // 初めは速く動き、最後に少し戻るように減速する
+    EaseOutBack,
+    // 最初と最後は遅く、途中は速く、最終的に戻るように動く
+    EaseInOutBack,
+
+    // ------------------------------
+    // バウンス補間 (Bounce)
+    // ------------------------------
+    // 弾むように動き、最後に弾む
+    EaseInBounce,
+    // 最初は速く、最後に弾むように動く
+    EaseOutBounce,
+    // 最初と最後は遅く、途中で弾むように動く
+    EaseInOutBounce,
+
+    // ------------------------------
+    // ばね補間 (Elastic)
+    // ------------------------------
+    // 弾力のある動きで、最初に引き戻された後に加速する
+    EaseInElastic,
+    // 最初は速く、最後に弾力のある動きで減速する
+    EaseOutElastic,
+    // 最初と最後は遅く、途中で弾力のある動きで加減速する
+    EaseInOutElastic,
 }

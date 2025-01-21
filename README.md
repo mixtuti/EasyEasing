@@ -146,6 +146,10 @@ using Cysharp.Threading.Tasks;
 複数のイージングタイプに基づく補間計算を行うためのクラスです。<br>
 このクラスでは、指定したイージングタイプに従い、時間の経過とともに値がどのように変化するかを計算する汎用的な Ease 関数を提供します。
 
+### 2. EasingMover.cs
+指定した時間内にイージングを使用して対象オブジェクト（Transform）を移動、回転、スケールさせるためのメソッドを提供します。<br>
+アニメーションやエフェクトにスムーズで自然な変化を加えることができます。
+
 ## 関数
 
 ### 1. Ease(float t, float total, float begin, float end, EasingType easingType)
